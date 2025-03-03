@@ -1,40 +1,44 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Button from "./Button";
-import "./main.css";
+import "../../main.css";
 
 export default {
   title: "Components/Button",
   component: Button,
   argTypes: {
+    text: {
+      control: "text",
+    },
     textColor: {
       control: "select",
       options: ["primary", "secondary"],
     },
     color: {
       control: "select",
-      options: ["primary", "secondary"],
+      options: ["primary", "secondary", "#800080"],
     },
     font: {
       control: "select",
       options: ["Minecraft Seven", "Minecraft Ten"],
     },
-    text: {
-      control: "text",
-    },
     disabled: {
+      control: "boolean",
+    },
+    active: {
       control: "boolean",
     },
   },
 } as Meta;
 
 const Template: StoryFn<{
-  text: string;
   color: string;
   textColor: string;
   font: string;
   disabled?: boolean;
-}> = (args) => <Button {...args} />;
+  text?: string;
+  active?: boolean;
+}> = (args) => <Button {...args}>{args.text}</Button>;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -43,6 +47,7 @@ Primary.args = {
   textColor: "primary",
   font: "Minecraft Ten",
   disabled: false,
+  active: false,
 };
 
 export const Secondary = Template.bind({});
@@ -52,4 +57,5 @@ Secondary.args = {
   textColor: "secondary",
   font: "Minecraft Seven",
   disabled: false,
+  active: false,
 };
