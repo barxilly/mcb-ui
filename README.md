@@ -3,7 +3,7 @@
 A port of Minecraft Bedrock Edition's UI to React.
 
 > [!NOTE]
-> This project is based on [minecraft-react-ui](https://github.com/josempineiro/minecraft-react-ui) by josempineiro.
+> This project is based on the idea from [minecraft-react-ui](https://github.com/josempineiro/minecraft-react-ui) by josempineiro, and aims to be a completely new version of it with different components (not to mention more up-to-date).
 
 ---
 
