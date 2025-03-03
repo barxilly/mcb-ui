@@ -43,7 +43,9 @@ export default App;
   active // true / false, default: false
   onClick={() => {}} // function
   style={{}} // object
-/>
+>
+  Primary Button
+</Button>
 ```
 
 ![Button](/gh/button.png)
@@ -52,7 +54,7 @@ export default App;
 
 ```jsx
 <Input
-  placeholder="Enter text here"
+  placeholder="Primary Input"
   color="primary" // "primary" / "secondary" / "#aabbcc"
   textcolor="primary" // "primary" / "secondary" / "#aabbcc"
   font="Minecraft Ten" // "Minecraft Ten" / "Minecraft Seven" / other font
@@ -69,7 +71,7 @@ export default App;
 <Card
   style={{}} // object
 >
-  Content
+  Card content
 </Card>
 ```
 
