@@ -4,3 +4,5 @@ export { default as ButtonGroup } from "./components/ButtonGroup";
 export { default as Input } from "./components/Input";
 export { default as Card } from "./components/Card";
 export { default as Title } from "./components/Title";
+export { default as Graph } from "./components/Graph";
+export { Switch } from "./components/Switch";

@@ -2,6 +2,7 @@
   --mcb-primary: #0db423;
   --mcb-primary-dark: #076b14;
   --mcb-secondary: #cecece;
+  --mcb-secondary-mid: #a0a0a0;
   --mcb-secondary-dark: #575759;
   --mcb-primary-text: #fff;
   --mcb-secondary-text: #222;
@@ -11,7 +12,7 @@
   --mcb-border: #fff;
   --mcb-border-color: #00000066;
   --bezel-color: #00000066;
-  --bezel-color-semi: rgba(200, 200, 200, 0.4);
+  --bezel-color-semi: rgba(200, 200, 200, 0.2);
   --bezel-color-invert: rgba(255, 255, 255, 0.4);
 }
 
@@ -64,7 +65,19 @@
     inset 0px 2px 0px 0px var(--bezel-color-invert),
     inset 2px 0px 0px 0px var(--bezel-color-invert);
 }
+.mcb-bezel {
+  box-shadow: inset 0px -2px 0px 0px var(--bezel-color),
+    inset -2px 0px 0px 0px var(--bezel-color),
+    inset 0px 2px 0px 0px var(--bezel-color-invert),
+    inset 2px 0px 0px 0px var(--bezel-color-invert);
+}
 
+.mcb-bezel:hover {
+  box-shadow: inset 0px -2px 0px 0px var(--bezel-color-semi),
+    inset -2px 0px 0px 0px var(--bezel-color-semi),
+    inset 0px 2px 0px 0px var(--bezel-color-invert),
+    inset 2px 0px 0px 0px var(--bezel-color-invert);
+}
 .mcb-input {
   display: inline-flex;
   align-items: center;
@@ -167,6 +180,55 @@
   color: var(--mcb-primary-text);
 }
 
+.mcb-graph {
+  background-color: #eee;
+  border: 1px solid var(--mcb-border-color);
+  padding: 16px;
+  margin: 16px;
+  box-shadow: inset 0px -2px 0px 0px var(--bezel-color),
+    inset -2px 0px 0px 0px var(--bezel-color),
+    inset 0px 2px 0px 0px var(--bezel-color-invert),
+    inset 2px 0px 0px 0px var(--bezel-color-invert);
+}
+
+.mcb-checkbox,
+.mcb-checkbox-checked {
+  aspect-ratio: 1;
+  display: inline-flex;
+  box-shadow: inset 0px -2px 0px 0px var(--bezel-color),
+    inset -2px 0px 0px 0px var(--bezel-color),
+    inset 0px 2px 0px 0px var(--bezel-color-invert),
+    inset 2px 0px 0px 0px var(--bezel-color-invert);
+  border: 2px solid var(--mcb-secondary-dark);
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  color: #fff;
+}
+
+.mcb-checkbox-dummy {
+  display: none !important;
+}
+
+.mcb-checkbox {
+  background-color: #ddd;
+}
+
+.mcb-checkbox-checked {
+  background-color: var(--mcb-primary);
+}
+
+.mcb-checkbox p,
+.mcb-checkbox-checked p {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
 .mcb-title-1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -195,4 +257,38 @@
   font-size: 1rem;
   font-weight: 700;
   color: var(--mcb-primary-text);
+}
+.mcb-switch {
+  display: inline-flex;
+  box-shadow: inset 0px -2px 0px 0px var(--bezel-color-semi),
+    inset -2px 0px 0px 0px var(--bezel-color-semi),
+    inset 0px 2px 0px 0px var(--bezel-color-semi),
+    inset 2px 0px 0px 0px var(--bezel-color-semi);
+  border: 2px black solid;
+  position: relative;
+  font-family: "Minecraft Ten", "Minecraft Seven", serif;
+  word-spacing: 0.8em;
+  line-height: 1.85;
+}
+.mcb-switch-inner {
+  height: 125% !important;
+  width: 55% !important;
+  bottom: 0;
+  position: absolute;
+  cursor: pointer;
+  border: 2px black solid;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+.mcb-switch-inner2 {
+  width: 100%;
+  height: 92%;
+  border-bottom: 4px var(--mcb-secondary-dark) solid;
+
+  box-shadow: inset 0px -2px 0px 0px var(--bezel-color-invert),
+    inset -2px 0px 0px 0px var(--bezel-color-invert),
+    inset 0px 2px 0px 0px var(--bezel-color-invert),
+    inset 2px 0px 0px 0px var(--bezel-color-invert);
 }
