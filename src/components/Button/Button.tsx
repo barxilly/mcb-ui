@@ -48,22 +48,40 @@ const Button = ({
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    //audioRef.current = new Audio(clickSound);
+    //audioRef.current = new Audio(clickSound)    ;
   }, []);
 
+  const [isPressed, setIsPressed] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
   const darkenedColor = color ? darkenColor(color, -50) : undefined;
+  const lessDarkenedColor = color ? darkenColor(color, -25) : undefined;
+
+  // Get button element
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
     <button
       className={"mcb-button" + (active ? " mcb-button-active" : "")}
       style={{
         ...style,
-        backgroundColor:
-          color === "secondary"
-            ? "var(--mcb-secondary)"
+        backgroundColor: isPressed
+          ? color === "secondary"
+            ? "var(--mcb-secondary-dark)"
             : color === "primary"
-            ? "var(--mcb-primary)"
-            : color,
+            ? "var(--mcb-primary-dark)"
+            : darkenedColor
+          : isHovered
+          ? color === "secondary"
+            ? "var(--mcb-secondary-mid)"
+            : color === "primary"
+            ? "var(--mcb-primary-mid)"
+            : lessDarkenedColor
+          : color === "secondary"
+          ? "var(--mcb-secondary)"
+          : color === "primary"
+          ? "var(--mcb-primary)"
+          : color,
         borderBottomColor:
           color === "secondary"
             ? "var(--mcb-secondary-dark)"
@@ -88,9 +106,33 @@ const Button = ({
           onClick();
         }
       }}
+      onMouseDown={() => {
+        setIsPressed(true);
+      }}
+      onMouseUp={() => {
+        setIsPressed(false);
+      }}
+      onMouseEnter={() => {
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setIsPressed(false);
+      }}
+      onFocus={() => {
+        setIsHovered(true);
+      }}
+      onBlur={() => {
+        setIsHovered(false);
+        setIsPressed(false);
+      }}
+      ref={buttonRef}
       disabled={disabled}
     >
       {children}
+      <div
+        className={isPressed ? "mcb-button-border-a" : "mcb-button-border"}
+      ></div>
     </button>
   );
 };

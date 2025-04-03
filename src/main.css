@@ -1,5 +1,6 @@
 :root {
   --mcb-primary: #0db423;
+  --mcb-primary-mid: #0a8a1b;
   --mcb-primary-dark: #076b14;
   --mcb-secondary: #cecece;
   --mcb-secondary-mid: #a0a0a0;
@@ -52,7 +53,7 @@
   position: relative;
   cursor: pointer;
   border-style: solid;
-  border-width: 0 0 4px 0;
+  border-width: 0 0 6px 0;
   border-top-color: transparent;
   /*border-bottom-color: var(--mcb-border-color);*/
   border-left-color: transparent;
@@ -60,10 +61,10 @@
   background-clip: padding-box;
   box-sizing: border-box;
   text-transform: uppercase;
-  box-shadow: inset 0px -2px 0px 0px var(--bezel-color),
-    inset -2px 0px 0px 0px var(--bezel-color),
-    inset 0px 2px 0px 0px var(--bezel-color-invert),
-    inset 2px 0px 0px 0px var(--bezel-color-invert);
+  box-shadow: inset 0px -2px 0px 0px var(--bezel-color-invert),
+    inset -4px 0px 0px 0px var(--bezel-color-invert),
+    inset 0px 4px 0px 0px var(--bezel-color-invert),
+    inset 4px 0px 0px 0px var(--bezel-color-invert);
 }
 .mcb-bezel {
   box-shadow: inset 0px -2px 0px 0px var(--bezel-color),
@@ -120,12 +121,26 @@
   filter: grayscale(0.7) brightness(0.8);
 }
 
+.mcb-button-border {
+  position: absolute;
+  border: 2px solid black;
+  width: 98%;
+  height: 105%;
+  top: 0;
+  left: 0;
+}
+
+.mcb-button-border-a {
+  position: absolute;
+  border: 2px solid black;
+  width: 98%;
+  height: 96%;
+  top: 0;
+  left: 0;
+}
+
 .mcb-button:hover {
   background-color: var(--mcb-bg-hover-color);
-  box-shadow: inset 0px -2px 0px 0px var(--bezel-color-semi),
-    inset -2px 0px 0px 0px var(--bezel-color-semi),
-    inset 0px 2px 0px 0px var(--bezel-color-invert),
-    inset 2px 0px 0px 0px var(--bezel-color-invert);
 }
 
 .mcb-button:active:hover:not(:disabled) {
@@ -157,10 +172,6 @@
   border-width: 4px 0 0;
   border-bottom-color: var(--mcb-bg-color);
   background-color: var(--mcb-bg-active-color);
-  box-shadow: inset 0px -2px 0px 0px var(--bezel-color-invert),
-    inset -2px 0px 0px 0px var(--bezel-color-invert),
-    inset 0px 2px 0px 0px var(--bezel-color),
-    inset 2px 0px 0px 0px var(--bezel-color);
 }
 
 .mcb-card {
@@ -259,16 +270,16 @@
   color: var(--mcb-primary-text);
 }
 .mcb-switch {
-  display: inline-flex;
+  display: inline-flex !important;
   box-shadow: inset 0px -2px 0px 0px var(--bezel-color-semi),
     inset -2px 0px 0px 0px var(--bezel-color-semi),
     inset 0px 2px 0px 0px var(--bezel-color-semi),
     inset 2px 0px 0px 0px var(--bezel-color-semi);
   border: 2px black solid;
   position: relative;
-  font-family: "Minecraft Ten", "Minecraft Seven", serif;
-  word-spacing: 0.8em;
-  line-height: 1.85;
+  font-family: "Minecraft Ten", "Minecraft Seven", serif !important;
+  word-spacing: 0.8em !important;
+  line-height: 1.85 !important;
 }
 .mcb-switch-inner {
   height: 125% !important;
