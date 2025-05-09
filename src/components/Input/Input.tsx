@@ -48,10 +48,10 @@ const Input = ({
       type="text"
       placeholder={placeholder}
       id={id}
-      value={value}
-      onChange={onChange}
-      defaultValue={defaultValue}
-    />
+      {...(value !== undefined && { value })}
+  {...(onChange && { onChange })}
+  {...(defaultValue !== undefined && { defaultValue })}
+/>
   );
 };
 

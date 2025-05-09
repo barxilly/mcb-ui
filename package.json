@@ -1,6 +1,6 @@
 {
   "name": "mcb-ui",
-  "version": "1.2.1-proto",
+  "version": "1.2.2-proto",
   "description": "A recreation of Minecraft Bedrock's new UI system for React",
   "author": "Barxilly",
   "license": "UNLICENSED",
