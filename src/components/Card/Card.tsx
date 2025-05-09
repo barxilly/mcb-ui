@@ -8,11 +8,13 @@ interface CardProps {
   m?: string;
   children?: React.ReactNode;
   style?: React.CSSProperties;
+  onClick?: () => void;
+  className?: string;
 }
 
-const Card = ({ w, h, p, m, children, style }: CardProps) => {
+const Card = ({ w, h, p, m, children, style,onClick, className}: CardProps) => {
   return (
-    <div className={`mcb-card`} style={style}>
+    <div className={"mcb-card "+className} style={style} onClick={onClick}>
       {children}
     </div>
   );

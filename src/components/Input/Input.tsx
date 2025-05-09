@@ -9,6 +9,12 @@ interface InputProps {
   disabled?: boolean;
   active?: boolean;
   placeholder?: string;
+  style?: React.CSSProperties;
+  className?: string;
+  id?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  defaultValue?: string;
 }
 
 const Input = ({
@@ -19,11 +25,19 @@ const Input = ({
   disabled,
   active,
   placeholder,
+  style,
+  className,
+  id,
+  value,
+  onChange,
+  defaultValue,
+
 }: InputProps) => {
   return (
     <input
-      className="mcb-input"
+      className={"mcb-input " + className}
       style={{
+        ...style,
         backgroundColor: color === "primary" ? "#333333" : "#FFFFFF",
         color: textColor === "primary" ? "#FFF" : "#000",
         fontFamily: font,
@@ -33,6 +47,10 @@ const Input = ({
       disabled={disabled}
       type="text"
       placeholder={placeholder}
+      id={id}
+      value={value}
+      onChange={onChange}
+      defaultValue={defaultValue}
     />
   );
 };
